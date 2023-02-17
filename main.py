@@ -3,7 +3,6 @@ import pywhatkit as pwk
 import datetime
 import pygame
 import wikipedia
-# import PyDictionary (goslate dependency bein' weird)
 import os, sys
 
 def pygame_init():
@@ -15,13 +14,11 @@ class VA:
 		self.name = name.lower()
 		self.voice = voice
 		self.listener = sr.Recognizer()
-		self.iteration = 0
  
 	def get_instruction(self):
-		++self.iteration
 		try:
 			with sr.Microphone() as mic:
-				print(f"{self.iteration}: Listening...")
+				print("Listening...")
 				
 				# input from mic
 				speech = self.listener.listen(mic)
